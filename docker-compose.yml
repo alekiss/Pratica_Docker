@@ -1,0 +1,11 @@
+version: '3.8'  # Versão do Docker Compose que estamos usando
+
+services:  
+  nodejs:  
+    image: node:14  # Imagem base para o contêiner Node.js
+    ports:  
+      - "3000:3000"  # Porta 3000 do host mapeada para a porta 3000 do contêiner
+    volumes:  
+      - ./app:/usr/src/app  # Monta o diretório local './app' no diretório '/usr/src/app' do contêiner
+    working_dir: /usr/src/app  
+    command: npm start  
